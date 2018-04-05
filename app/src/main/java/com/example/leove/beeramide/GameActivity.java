@@ -88,6 +88,11 @@ public class GameActivity extends AppCompatActivity {
 
         if (currentRound == NB_ROUND_MAX){
             //démarrer une nouvelle activité
+            Intent intent = new Intent(this, TakePhotoActivity.class);
+            intent.putStringArrayListExtra("playerList", playerList);
+            intent.putExtra("gameMoment", "after");
+            startActivity(intent);
+
             Log.e("feedback", "Fin de la partie");
         }
         else{
@@ -98,6 +103,17 @@ public class GameActivity extends AppCompatActivity {
 
     private void fillRules(){
         rules.add("Player1 met une baffe à Player2");
+        rules.add("joueur 1 : Player1");
+        rules.add("joueur 1 : Player1");
+        rules.add("joueur 1 : Player1");
+        rules.add("joueur 1 : Player1");
+        rules.add("joueur 1 : Player1");
+        rules.add("joueur 1 : Player1");
+        rules.add("joueur 1 : Player1");
+        rules.add("joueur 1 : Player1");
+        rules.add("joueur 1 : Player1");
+        rules.add("joueur 1 : Player1");
+        rules.add("joueur 1 : Player1");
     }
 
     private String pickRandomPlayer(){
