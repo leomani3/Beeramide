@@ -22,8 +22,11 @@ public class AddRuleActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
+        Log.e("ETTT","ALLLO");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_rule_activity);
+
+
 
         //Reference à tous les widget
         ListView lv = findViewById(R.id.rule_list);

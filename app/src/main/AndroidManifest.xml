@@ -27,10 +27,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".TakePhotoActivity">
+        </activity>
         <activity android:name=".GameActivity"
             android:screenOrientation="landscape">
         </activity>
-        <activity android:name=".TakePhotoActivity">
+        <activity android:name=".AddRuleActivity">
+        </activity>
+        <activity android:name=".EndGameActivity">
         </activity>
     </application>
 
