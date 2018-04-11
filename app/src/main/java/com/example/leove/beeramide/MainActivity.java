@@ -15,6 +15,9 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    public ArrayList<String> rules = new ArrayList<String>();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,9 +51,25 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, TakePhotoActivity.class);
                 intent.putStringArrayListExtra("playerList", playerList);
                 intent.putExtra("gameMoment", "before");
+                intent.putStringArrayListExtra("ruleList", rules);
                 startActivity(intent);
             }
         });
+    }
+
+    private void fillRules(){
+        rules.add("Player1 met une baffe à Player2");
+        rules.add("joueur 1 : Player1");
+        rules.add("joueur 1 : Player1");
+        rules.add("joueur 1 : Player1");
+        rules.add("joueur 1 : Player1");
+        rules.add("joueur 1 : Player1");
+        rules.add("joueur 1 : Player1");
+        rules.add("joueur 1 : Player1");
+        rules.add("joueur 1 : Player1");
+        rules.add("joueur 1 : Player1");
+        rules.add("joueur 1 : Player1");
+        rules.add("joueur 1 : Player1");
     }
 
 }

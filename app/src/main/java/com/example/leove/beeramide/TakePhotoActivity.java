@@ -46,7 +46,7 @@ public class TakePhotoActivity extends AppCompatActivity {
     public String gameMoment;
     String beforePhotoPath;
     String afterPhotoPath;
-
+    public ArrayList<String> rules = new ArrayList<String>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -57,7 +57,7 @@ public class TakePhotoActivity extends AppCompatActivity {
 
         playerList = getIntent().getStringArrayListExtra("playerList");
         gameMoment = getIntent().getStringExtra("gameMoment");
-
+        rules = getIntent().getStringArrayListExtra( "ruleList");
         Button takePictureButton = findViewById(R.id.takePictureButton);
 
         //Take a picture
@@ -136,6 +136,7 @@ public class TakePhotoActivity extends AppCompatActivity {
                 if (gameMoment == "before"){
                     Intent intent = new Intent(TakePhotoActivity.this, GameActivity.class);
                     intent.putStringArrayListExtra("playerList", playerList);
+                    intent.putStringArrayListExtra("ruleList",rules);
                     startActivity(intent);
                 }
                 else if (gameMoment == "after"){

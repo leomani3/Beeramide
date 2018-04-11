@@ -38,10 +38,10 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game);
         playerList = getIntent().getStringArrayListExtra("playerList");
-        //remplir l'arrayList de règles
-        fillRules();
+        rules=getIntent().getStringArrayListExtra("ruleList");
         newRound();
     }
+
 
 
     public boolean onTouchEvent(MotionEvent event){
@@ -101,20 +101,7 @@ public class GameActivity extends AppCompatActivity {
         }
     }
 
-    private void fillRules(){
-        rules.add("Player1 met une baffe à Player2");
-        rules.add("joueur 1 : Player1");
-        rules.add("joueur 1 : Player1");
-        rules.add("joueur 1 : Player1");
-        rules.add("joueur 1 : Player1");
-        rules.add("joueur 1 : Player1");
-        rules.add("joueur 1 : Player1");
-        rules.add("joueur 1 : Player1");
-        rules.add("joueur 1 : Player1");
-        rules.add("joueur 1 : Player1");
-        rules.add("joueur 1 : Player1");
-        rules.add("joueur 1 : Player1");
-    }
+
 
     private String pickRandomPlayer(){
         Random rdm = new Random();
