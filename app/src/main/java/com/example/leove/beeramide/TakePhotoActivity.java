@@ -136,7 +136,7 @@ public class TakePhotoActivity extends AppCompatActivity {
                 Log.e("feedback", "22222222222222222222222");
                 Log.e("feedback", "game moment : " +gameMoment);
                 // addImageToGallery(mCurrentPhotoPath, this);
-                if (gameMoment == "before"){
+                if (true){
                     Log.e("feedback", "OOOOOOOOOOOOOOOOOOOOOOOOOOO");
 
                     Intent intent = new Intent(TakePhotoActivity.this, GameActivity.class);
