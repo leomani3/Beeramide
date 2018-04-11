@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         ListView lv = findViewById(R.id.player_list);
         Button addPlayerBt = findViewById(R.id.add_player);
         Button startGameBt = findViewById(R.id.start_game);
-        Button addRuleBt = findViewById((R.id.add_rule));
+        Button addRuleBt = findViewById((R.id.go_add_rule));
         final EditText editText = findViewById(R.id.player_name);
 
         //Création de la list de player
@@ -81,5 +81,4 @@ public class MainActivity extends AppCompatActivity {
         rules.add("joueur 1 : Player1");
         rules.add("joueur 1 : Player1");
     }
-
 }
