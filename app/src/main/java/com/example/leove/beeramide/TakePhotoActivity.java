@@ -152,7 +152,6 @@ public class TakePhotoActivity extends AppCompatActivity {
                     Intent intent = new Intent(TakePhotoActivity.this, EndGameActivity.class);
                     startActivity(intent);
                 }
-
             }
         }
     }
