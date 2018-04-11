@@ -58,7 +58,7 @@ tools:context="com.example.leove.beeramide.AddRuleActivity">
 
 
     <ListView
-        android:id="@+id/player_list"
+        android:id="@+id/rule_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="30dp">
@@ -67,8 +67,8 @@ tools:context="com.example.leove.beeramide.AddRuleActivity">
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="START GAME"
-        android:id="@+id/start_game"
+        android:text="Retour"
+        android:id="@+id/retour"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

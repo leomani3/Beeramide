@@ -25,22 +25,22 @@ public class AddRuleActivity extends AppCompatActivity {
         setContentView(R.layout.add_rule_activity);
 
         //Reference à tous les widget
-        ListView lv = findViewById(R.id.player_list);
-        Button addPlayerBt = findViewById(R.id.add_player);
-        Button startGameBt = findViewById(R.id.start_game);
-        final EditText editText = findViewById(R.id.player_name);
+        ListView lv = findViewById(R.id.rule_list);
+        Button addRuleBt = findViewById(R.id.add_rule);
+        Button Retour = findViewById(R.id.retour);
+        final EditText editText = findViewById(R.id.newRule);
 
         //Création de la list de player
-        final ArrayList<String> playerList = new ArrayList<String>();
+        final ArrayList<String> RuleList = new ArrayList<String>();
         //Attache à l'ArrayAdapter
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.player_list_adapter, R.id.textView, playerList);
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.rule_list_adapter, R.id.textViewRule, RuleList);
         lv.setAdapter(arrayAdapter);
 
         //Add player
-        addPlayerBt.setOnClickListener(new View.OnClickListener(){
+        addRuleBt.setOnClickListener(new View.OnClickListener(){
 
             public  void onClick(View view){
-                playerList.add(editText.getText().toString());
+                RuleList.add(editText.getText().toString());
                 editText.setText("");
                 arrayAdapter.notifyDataSetChanged();
             }
