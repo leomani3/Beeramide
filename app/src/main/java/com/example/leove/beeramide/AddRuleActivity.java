@@ -25,5 +25,37 @@ public class AddRuleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_rule_activity);
 
+        //Reference à tous les widget
+        ListView lv = findViewById(R.id.rule_list);
+        Button addRuleBt = findViewById(R.id.add_rule);
+        Button Retour = findViewById(R.id.retour);
+        final EditText editText = findViewById(R.id.newRule);
+
+        //Création de la list de player
+        final ArrayList<String> RuleList = new ArrayList<String>();
+        //Attache à l'ArrayAdapter
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.rule_list_adapter, R.id.textViewRule, RuleList);
+        lv.setAdapter(arrayAdapter);
+
+        //Add player
+        addRuleBt.setOnClickListener(new View.OnClickListener(){
+
+            public  void onClick(View view){
+                RuleList.add(editText.getText().toString());
+                editText.setText("");
+                arrayAdapter.notifyDataSetChanged();
+            }
+        });
+
+        //Start game
+        /*startGameBt.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent intent = new Intent(AddRuleActivity.this, TakePhotoActivity.class);
+                intent.putStringArrayListExtra("playerList", playerList);
+                intent.putExtra("gameMoment", "before");
+                startActivity(intent);
+            }
+        });*/
+
     }
 }
