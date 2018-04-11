@@ -130,21 +130,26 @@ public class TakePhotoActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // Check which request we're responding to
         if (requestCode == REQUEST_IMAGE_CAPTURE) {
+            Log.e("feedback", "11111111111111111111111111");
             // Make sure the request was successful
             if (resultCode == RESULT_OK) {
+                Log.e("feedback", "22222222222222222222222");
+                Log.e("feedback", "game moment : " +gameMoment);
                 // addImageToGallery(mCurrentPhotoPath, this);
                 if (gameMoment == "before"){
+                    Log.e("feedback", "OOOOOOOOOOOOOOOOOOOOOOOOOOO");
+
                     Intent intent = new Intent(TakePhotoActivity.this, GameActivity.class);
                     intent.putStringArrayListExtra("playerList", playerList);
                     startActivity(intent);
                 }
                 else if (gameMoment == "after"){
+                    Log.e("feedback", "PPPPPPPPPPPPPPPP");
                     //faire les layers
-                    Drawable[] layers = new Drawable[2];
-
-                    layers[0] = getResources().getDrawable(R.drawable.before);
 
                     //startEndActivity
+                    Intent intent = new Intent(TakePhotoActivity.this, EndGameActivity.class);
+                    startActivity(intent);
                 }
 
             }
