@@ -41,7 +41,7 @@
 
 
         <Button
-            android:id="@+id/add_rule"
+            android:id="@+id/go_add_rule"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
