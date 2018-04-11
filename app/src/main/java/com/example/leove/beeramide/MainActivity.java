@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         ListView lv = findViewById(R.id.player_list);
         Button addPlayerBt = findViewById(R.id.add_player);
         Button startGameBt = findViewById(R.id.start_game);
+        Button addRuleBt = findViewById((R.id.add_rule));
         final EditText editText = findViewById(R.id.player_name);
 
         //Création de la list de player
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         //Attache à l'ArrayAdapter
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.player_list_adapter, R.id.textView, playerList);
         lv.setAdapter(arrayAdapter);
+
+        fillRules();
 
         //Add player
         addPlayerBt.setOnClickListener(new View.OnClickListener(){
@@ -51,6 +54,13 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, TakePhotoActivity.class);
                 intent.putStringArrayListExtra("playerList", playerList);
                 intent.putExtra("gameMoment", "before");
+                intent.putStringArrayListExtra("ruleList", rules);
+                startActivity(intent);
+            }
+        });
+        addRuleBt.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent intent = new Intent(MainActivity.this, AddRuleActivity.class);
                 intent.putStringArrayListExtra("ruleList", rules);
                 startActivity(intent);
             }
