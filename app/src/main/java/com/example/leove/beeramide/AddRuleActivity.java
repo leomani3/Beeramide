@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -21,8 +22,11 @@ public class AddRuleActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
+        Log.e("ETTT","ALLLO");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_rule_activity);
+
+
 
         //Reference à tous les widget
         ListView lv = findViewById(R.id.rule_list);
