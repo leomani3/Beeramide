@@ -90,7 +90,7 @@ public class GameActivity extends AppCompatActivity {
             //démarrer une nouvelle activité
             Intent intent = new Intent(this, TakePhotoActivity.class);
             intent.putStringArrayListExtra("playerList", playerList);
-            intent.putExtra("gameMoment", "after");
+            intent.putExtra("gameMoment", 1);
             startActivity(intent);
 
             Log.e("feedback", "Fin de la partie");

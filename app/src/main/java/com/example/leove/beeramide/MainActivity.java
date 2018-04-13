@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view){
                 Intent intent = new Intent(MainActivity.this, TakePhotoActivity.class);
                 intent.putStringArrayListExtra("playerList", playerList);
-                intent.putExtra("gameMoment", "before");
+                intent.putExtra("gameMoment", 0);
                 intent.putStringArrayListExtra("ruleList", rules);
                 startActivity(intent);
             }
