@@ -43,7 +43,7 @@ public class TakePhotoActivity extends AppCompatActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
     public ArrayList<String> playerList = new ArrayList<String>();
-    public String gameMoment;
+    public int gameMoment;
     String beforePhotoPath;
     String afterPhotoPath;
     public ArrayList<String> rules = new ArrayList<String>();
@@ -56,7 +56,7 @@ public class TakePhotoActivity extends AppCompatActivity {
         Log.e("feedback", getExternalFilesDir(null).toString());
 
         playerList = getIntent().getStringArrayListExtra("playerList");
-        gameMoment = getIntent().getStringExtra("gameMoment");
+        gameMoment = getIntent().getIntExtra("gameMoment", 2);
         rules = getIntent().getStringArrayListExtra( "ruleList");
         Button takePictureButton = findViewById(R.id.takePictureButton);
 
@@ -104,10 +104,10 @@ public class TakePhotoActivity extends AppCompatActivity {
         );
 
         // Save a file: path for use with ACTION_VIEW intents
-        if (gameMoment == "before"){
+        if (gameMoment == 0){
             beforePhotoPath = image.getAbsolutePath();
         }
-        else if (gameMoment == "after"){
+        else if (gameMoment == 1){
             afterPhotoPath = image.getAbsolutePath();
         }
 
@@ -130,22 +130,17 @@ public class TakePhotoActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // Check which request we're responding to
         if (requestCode == REQUEST_IMAGE_CAPTURE) {
-            Log.e("feedback", "11111111111111111111111111");
             // Make sure the request was successful
             if (resultCode == RESULT_OK) {
-                Log.e("feedback", "22222222222222222222222");
-                Log.e("feedback", "game moment : " +gameMoment);
                 // addImageToGallery(mCurrentPhotoPath, this);
-                if (true){
-                    Log.e("feedback", "OOOOOOOOOOOOOOOOOOOOOOOOOOO");
+                if (gameMoment == 0){
 
                     Intent intent = new Intent(TakePhotoActivity.this, GameActivity.class);
                     intent.putStringArrayListExtra("playerList", playerList);
                     intent.putStringArrayListExtra("ruleList",rules);
                     startActivity(intent);
                 }
-                else if (gameMoment == "after"){
-                    Log.e("feedback", "PPPPPPPPPPPPPPPP");
+                else if (gameMoment == 1){
                     //faire les layers
 
                     //startEndActivity

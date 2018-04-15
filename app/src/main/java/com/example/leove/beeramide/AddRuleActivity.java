@@ -22,7 +22,7 @@ public class AddRuleActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        Log.e("ETTT","ALLLO");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_rule_activity);
 
@@ -40,7 +40,7 @@ public class AddRuleActivity extends AppCompatActivity {
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.rule_list_adapter, R.id.textViewRule, RuleList);
         lv.setAdapter(arrayAdapter);
 
-        //Add player
+        //Add rule
         addRuleBt.setOnClickListener(new View.OnClickListener(){
 
             public  void onClick(View view){
@@ -50,15 +50,14 @@ public class AddRuleActivity extends AppCompatActivity {
             }
         });
 
-        //Start game
-        /*startGameBt.setOnClickListener(new View.OnClickListener(){
+        //retour
+        Retour.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                Intent intent = new Intent(AddRuleActivity.this, TakePhotoActivity.class);
-                intent.putStringArrayListExtra("playerList", playerList);
-                intent.putExtra("gameMoment", "before");
+                Intent intent = new Intent(AddRuleActivity.this, MainActivity.class);
+                intent.putStringArrayListExtra("ruleList", RuleList);
                 startActivity(intent);
             }
-        });*/
+        });
 
     }
 }
