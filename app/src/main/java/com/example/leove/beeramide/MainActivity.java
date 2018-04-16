@@ -41,7 +41,9 @@ public class MainActivity extends AppCompatActivity {
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.player_list_adapter, R.id.textView, playerList);
         lv.setAdapter(arrayAdapter);
 
-        fillRules();
+        if(rules.size() == 0 ){
+            fillRules();
+        }
 
         //Add player
         addPlayerBt.setOnClickListener(new View.OnClickListener(){

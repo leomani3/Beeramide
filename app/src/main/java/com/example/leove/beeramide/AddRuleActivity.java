@@ -59,7 +59,6 @@ public class AddRuleActivity extends AppCompatActivity {
             public void onClick(View view){
                 Intent intent = new Intent(AddRuleActivity.this, MainActivity.class);
                 intent.putStringArrayListExtra("ruleList", rules);
-                rules.removeAll(rules);
                 startActivity(intent);
             }
         });
