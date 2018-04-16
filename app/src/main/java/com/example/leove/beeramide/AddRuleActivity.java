@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -19,6 +20,8 @@ import java.util.ArrayList;
  */
 
 public class AddRuleActivity extends AppCompatActivity {
+
+    ArrayList<String> rules = new ArrayList<>();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,17 +37,18 @@ public class AddRuleActivity extends AppCompatActivity {
         Button Retour = findViewById(R.id.retour);
         final EditText editText = findViewById(R.id.newRule);
 
-        //Création de la list de player
-        final ArrayList<String> RuleList = new ArrayList<String>();
+        //liste des règles
+        rules = getIntent().getStringArrayListExtra("ruleList");
+
         //Attache à l'ArrayAdapter
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.rule_list_adapter, R.id.textViewRule, RuleList);
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.rule_list_adapter, R.id.textViewRule, rules);
         lv.setAdapter(arrayAdapter);
 
         //Add rule
         addRuleBt.setOnClickListener(new View.OnClickListener(){
 
             public  void onClick(View view){
-                RuleList.add(editText.getText().toString());
+                rules.add(editText.getText().toString());
                 editText.setText("");
                 arrayAdapter.notifyDataSetChanged();
             }
@@ -54,7 +58,8 @@ public class AddRuleActivity extends AppCompatActivity {
         Retour.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Intent intent = new Intent(AddRuleActivity.this, MainActivity.class);
-                intent.putStringArrayListExtra("ruleList", RuleList);
+                intent.putStringArrayListExtra("ruleList", rules);
+                rules.removeAll(rules);
                 startActivity(intent);
             }
         });
