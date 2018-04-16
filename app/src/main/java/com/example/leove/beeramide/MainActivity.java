@@ -61,12 +61,15 @@ public class MainActivity extends AppCompatActivity {
         //Start game
         startGameBt.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                Intent intent = new Intent(MainActivity.this, TakePhotoActivity.class);
-                intent.putStringArrayListExtra("playerList", playerList);
-                intent.putExtra("gameMoment", 0);
-                intent.putExtra("nbTurns",nbTurns.getText());
-                intent.putStringArrayListExtra("ruleList", rules);
-                startActivity(intent);
+                if(playerList.size()>1)
+                {
+                    Intent intent = new Intent(MainActivity.this, TakePhotoActivity.class);
+                    intent.putStringArrayListExtra("playerList", playerList);
+                    intent.putExtra("gameMoment", 0);
+                    intent.putExtra("nbTurns",nbTurns.getText());
+                    intent.putStringArrayListExtra("ruleList", rules);
+                    startActivity(intent);
+                }
             }
         });
 
