@@ -52,9 +52,11 @@ public class MainActivity extends AppCompatActivity {
         addPlayerBt.setOnClickListener(new View.OnClickListener(){
 
             public  void onClick(View view){
-                playerList.add(editText.getText().toString());
-                editText.setText("");
-                arrayAdapter.notifyDataSetChanged();
+                if (editText.getText().length() > 0 && !editText.getText().toString().contains(" ")){
+                    playerList.add(editText.getText().toString());
+                    editText.setText("");
+                    arrayAdapter.notifyDataSetChanged();
+                }
             }
         });
 
@@ -82,8 +84,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fillRules(){
-        rules.add("Player1 règle numéro 1 player2");
-        rules.add("Player1 règle numéro 2 player2");
-        rules.add("Player1 règle numéro 3 player2");
+        rules.add("Player1 règle numéro 1 Player2");
+        rules.add("Player1 règle numéro 2 Player2");
+        rules.add("Player1 règle numéro 3 Player2");
     }
 }
