@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         //Start game
         startGameBt.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                if(playerList.size()>1)
+                if(playerList.size()>1 && numberPicker.getValue()>0)
                 {
                     Intent intent = new Intent(MainActivity.this, TakePhotoActivity.class);
                     intent.putStringArrayListExtra("playerList", playerList);

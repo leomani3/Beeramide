@@ -42,7 +42,7 @@ public class GameActivity extends AppCompatActivity {
         NB_ROUND_MAX = getIntent().getIntExtra("nbTurns",15);
         newRound();
         TextView textTurns = findViewById(R.id.textTurns);
-        textTurns.setText("Tour "+currentRound+" out of "+NB_ROUND_MAX+"!!");
+        textTurns.setText("Turn "+currentRound+" out of "+NB_ROUND_MAX+"!!");
     }
 
 
