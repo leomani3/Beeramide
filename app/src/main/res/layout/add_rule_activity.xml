@@ -46,7 +46,7 @@ tools:context="com.example.leove.beeramide.AddRuleActivity">
             android:layout_height="match_parent"
             android:layout_weight="0.2"
             android:id="@+id/add_rule"
-            android:text="Enter"/>
+            android:text="ADD"/>
 
     </LinearLayout>
 

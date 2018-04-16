@@ -15,13 +15,18 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    public ArrayList<String> rules = new ArrayList<String>();
-
+    //Liste de règles
+    ArrayList<String> rules = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (getIntent().hasExtra("ruleList")){
+            rules = getIntent().getStringArrayListExtra("ruleList");
+        }
+
 
         //Reference à tous les widget
         ListView lv = findViewById(R.id.player_list);
@@ -69,17 +74,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fillRules(){
-        rules.add("Player1 met une baffe à Player2");
-        rules.add("joueur 1 : Player1");
-        rules.add("joueur 1 : Player1");
-        rules.add("joueur 1 : Player1");
-        rules.add("joueur 1 : Player1");
-        rules.add("joueur 1 : Player1");
-        rules.add("joueur 1 : Player1");
-        rules.add("joueur 1 : Player1");
-        rules.add("joueur 1 : Player1");
-        rules.add("joueur 1 : Player1");
-        rules.add("joueur 1 : Player1");
-        rules.add("joueur 1 : Player1");
+        rules.add("Player1 règle numéro 1 player2");
+        rules.add("Player1 règle numéro 2 player2");
+        rules.add("Player1 règle numéro 3 player2");
     }
 }
