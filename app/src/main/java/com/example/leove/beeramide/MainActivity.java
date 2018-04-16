@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         Button addPlayerBt = findViewById(R.id.add_player);
         Button startGameBt = findViewById(R.id.start_game);
         Button addRuleBt = findViewById((R.id.go_add_rule));
-        NumberPicker numberPicker = findViewById(R.id.numberPicker);
+        final NumberPicker numberPicker = findViewById(R.id.numberPicker);
         numberPicker.setMaxValue(50);
         //final TextView nbTurns = findViewById(R.id.nb_turns);
         final EditText editText = findViewById(R.id.player_name);
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, TakePhotoActivity.class);
                     intent.putStringArrayListExtra("playerList", playerList);
                     intent.putExtra("gameMoment", 0);
-                    intent.putExtra("nbTurns",nbTurns.getText());
+                    intent.putExtra("nbTurns",numberPicker.getValue());
                     intent.putStringArrayListExtra("ruleList", rules);
                     startActivity(intent);
                 }
