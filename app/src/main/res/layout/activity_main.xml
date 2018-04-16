@@ -64,39 +64,25 @@
 
         </ScrollView>
 
-
-
-            <Button
-                android:id="@+id/go_add_rule"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:text="ADD RULE" />
-
         <TextView
-            android:id="@+id/textView3"
             android:layout_width="match_parent"
-
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="Number of turns :"
-            android:textSize="20dp" />
+            android:text="Nombre de tours"/>
 
-        <EditText
-            android:id="@+id/nb_turns"
+        <NumberPicker
+            android:id="@+id/numberPicker"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"></NumberPicker>
+
+
+        <Button
+            android:id="@+id/go_add_rule"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:inputType="number"
-            android:text="15" />
-
-        <ListView
-            android:id="@+id/player_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="30dp"></ListView>
+            android:text="ADD RULE" />
 
         <Button
             android:id="@+id/start_game"
@@ -105,13 +91,6 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:text="START GAME" />
-            <Button
-                android:id="@+id/start_game"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:text="START GAME" />
 
 
 

@@ -3,10 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Beeramide.iml" filepath="$PROJECT_DIR$/Beeramide.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../../../corentin/Desktop/ffff/Beeramide/Beeramide.iml" filepath="$PROJECT_DIR$/../../../../../corentin/Desktop/ffff/Beeramide/Beeramide.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../../../leove/Desktop/leove/Desktop/Bureau/UQAC/Session 2/Prog. Mobile/Beeramide/.idea/Beeramide.iml" filepath="$PROJECT_DIR$/../../../../../leove/Desktop/leove/Desktop/Bureau/UQAC/Session 2/Prog. Mobile/Beeramide/.idea/Beeramide.iml" />
+      <module fileurl="file://C:\Users\leove\Desktop\corentin\Desktop\ffff\Beeramide\Beeramide.iml" filepath="C:\Users\leove\Desktop\corentin\Desktop\ffff\Beeramide\Beeramide.iml" />
+      <module fileurl="file://C:\Users\leove\Desktop\leove\Desktop\leove\Desktop\Bureau\UQAC\Session 2\Prog. Mobile\Beeramide\.idea\Beeramide.iml" filepath="C:\Users\leove\Desktop\leove\Desktop\leove\Desktop\Bureau\UQAC\Session 2\Prog. Mobile\Beeramide\.idea\Beeramide.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../../../corentin/Desktop/ffff/Beeramide/app/app.iml" filepath="$PROJECT_DIR$/../../../../../corentin/Desktop/ffff/Beeramide/app/app.iml" />
+      <module fileurl="file://C:\Users\leove\Desktop\corentin\Desktop\ffff\Beeramide\app\app.iml" filepath="C:\Users\leove\Desktop\corentin\Desktop\ffff\Beeramide\app\app.iml" />
     </modules>
   </component>
 </project>
