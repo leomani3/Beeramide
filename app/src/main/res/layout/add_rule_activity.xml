@@ -25,7 +25,7 @@ tools:context="com.example.leove.beeramide.AddRuleActivity">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:text="Pour qu'une règle marche vous devez écrire votre règle comme vous le souhaitez mais en ajoutant -Player 1- et -Player 2- qui correspondront aux joueurs choisit aléatoirement dans le jeu."
+        android:text="En suivant le même patterne que les règles déjà existantes, créez les votre en écrivant Player1, 2, 3 ou 4 lorsque vous voulez y insérer des joueurs choisis aléatoirement lors de vos parties."
         android:textSize="20dp"/>
 
     <LinearLayout
@@ -52,6 +52,11 @@ tools:context="com.example.leove.beeramide.AddRuleActivity">
 
 
 
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="0.8"
+    android:fillViewport="true">
 
     <ListView
         android:id="@+id/rule_list"
@@ -59,6 +64,8 @@ tools:context="com.example.leove.beeramide.AddRuleActivity">
         android:layout_height="wrap_content"
         android:textSize="30dp">
     </ListView>
+</ScrollView>
+
 
     <Button
         android:layout_width="match_parent"

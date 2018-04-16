@@ -101,6 +101,8 @@ public class GameActivity extends AppCompatActivity {
         else{
             tv.setText(pickNewRandomRule());
             currentRound++;
+            TextView textTurns = findViewById(R.id.textTurns);
+            textTurns.setText("Turn "+currentRound+" out of "+NB_ROUND_MAX+"!!");
         }
     }
 

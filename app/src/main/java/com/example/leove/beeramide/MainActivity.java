@@ -90,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void fillRules(){
         rules.add("Player1 règle numéro 1 Player2");
-        rules.add("Player1 règle numéro 2 Player2");
-        rules.add("Player1 règle numéro 3 Player2");
+        rules.add("Player1 immite Player2 jusqu'à nouvel ordre");
     }
 }
