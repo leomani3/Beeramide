@@ -48,9 +48,13 @@ public class AddRuleActivity extends AppCompatActivity {
         addRuleBt.setOnClickListener(new View.OnClickListener(){
 
             public  void onClick(View view){
-                rules.add(editText.getText().toString());
-                editText.setText("");
-                arrayAdapter.notifyDataSetChanged();
+                if(editText.getText().length()>0)
+                {
+                    rules.add(editText.getText().toString());
+                    editText.setText("");
+                    arrayAdapter.notifyDataSetChanged();
+                }
+
             }
         });
 

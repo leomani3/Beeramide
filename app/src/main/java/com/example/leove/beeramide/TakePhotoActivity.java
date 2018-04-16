@@ -47,6 +47,7 @@ public class TakePhotoActivity extends AppCompatActivity {
     String beforePhotoPath;
     String afterPhotoPath;
     public ArrayList<String> rules = new ArrayList<String>();
+    public int nbTurns;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -59,7 +60,7 @@ public class TakePhotoActivity extends AppCompatActivity {
         gameMoment = getIntent().getIntExtra("gameMoment", 2);
         rules = getIntent().getStringArrayListExtra( "ruleList");
         Button takePictureButton = findViewById(R.id.takePictureButton);
-
+        nbTurns = getIntent().getIntExtra("nbTurns",15);
         //Take a picture
         takePictureButton.setOnClickListener(new View.OnClickListener(){
 
@@ -138,6 +139,7 @@ public class TakePhotoActivity extends AppCompatActivity {
                     Intent intent = new Intent(TakePhotoActivity.this, GameActivity.class);
                     intent.putStringArrayListExtra("playerList", playerList);
                     intent.putStringArrayListExtra("ruleList",rules);
+                    intent.putExtra("nbTurns",nbTurns);
                     startActivity(intent);
                 }
                 else if (gameMoment == 1){

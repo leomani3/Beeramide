@@ -30,7 +30,7 @@ public class GameActivity extends AppCompatActivity {
 
     public ArrayList<String> rules = new ArrayList<String>();
     public ArrayList<String> playerList = new ArrayList<String>();
-    public static final int NB_ROUND_MAX = 10;
+    public static int NB_ROUND_MAX;
     public int currentRound = 0;
 
     @Override
@@ -39,7 +39,10 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.game);
         playerList = getIntent().getStringArrayListExtra("playerList");
         rules=getIntent().getStringArrayListExtra("ruleList");
+        NB_ROUND_MAX = getIntent().getIntExtra("nbTurns",15);
         newRound();
+        TextView textTurns = findViewById(R.id.textTurns);
+        textTurns.setText("Tour "+currentRound+" out of "+NB_ROUND_MAX+"!!");
     }
 
 

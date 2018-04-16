@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.NumberPicker;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         Button addPlayerBt = findViewById(R.id.add_player);
         Button startGameBt = findViewById(R.id.start_game);
         Button addRuleBt = findViewById((R.id.go_add_rule));
+        final TextView nbTurns = findViewById(R.id.nb_turns);
         final EditText editText = findViewById(R.id.player_name);
 
         //Création de la list de player
@@ -61,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, TakePhotoActivity.class);
                 intent.putStringArrayListExtra("playerList", playerList);
                 intent.putExtra("gameMoment", 0);
+                intent.putExtra("nbTurns",nbTurns.getText());
                 intent.putStringArrayListExtra("ruleList", rules);
                 startActivity(intent);
             }
@@ -73,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
     }
 
     private void fillRules(){
