@@ -28,7 +28,7 @@ import java.util.Random;
 
 public class GameActivity extends AppCompatActivity {
 
-    public ArrayList<String> rules = new ArrayList<String>();
+    public ArrayList<Rule> rules = new ArrayList<Rule>();
     public ArrayList<String> playerList = new ArrayList<String>();
     public static int NB_ROUND_MAX;
     public int currentRound = 0;
@@ -38,7 +38,7 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game);
         playerList = getIntent().getStringArrayListExtra("playerList");
-        rules=getIntent().getStringArrayListExtra("ruleList");
+        rules = (ArrayList<Rule>) getIntent().getSerializableExtra("ruleList");
         NB_ROUND_MAX = getIntent().getIntExtra("nbTurns",15);
         newRound();
         TextView textTurns = findViewById(R.id.textTurns);
@@ -78,12 +78,12 @@ public class GameActivity extends AppCompatActivity {
         int rdmNumber = rdm.nextInt(rules.size());
 
         //on va chercher la règle qui correspond au random
-        String tempRule = rules.get(rdmNumber);
+        Rule tempRule = rules.get(rdmNumber);
         //on retire cette règle de l'ArrayList afin qu'elle ne soit plus choisie
         rules.remove(rdmNumber);
-        tempRule = remplacePlayerString(tempRule);
+        tempRule.setRule(remplacePlayerString(tempRule.getRule()));
 
-        return tempRule;
+        return tempRule.getRule();
     }
 
     public void newRound(){

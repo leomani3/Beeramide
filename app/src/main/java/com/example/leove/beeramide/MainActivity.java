@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -18,7 +19,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     //Liste de règles
-    ArrayList<String> rules = new ArrayList<String>();
+    //ArrayList<String> rules = new ArrayList<String>();
+    ArrayList<Rule> rules = new ArrayList<Rule>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if (getIntent().hasExtra("ruleList")){
-            rules = getIntent().getStringArrayListExtra("ruleList");
+            rules = (ArrayList<Rule>) getIntent().getExtras().get("ruleList");
         }
 
 
@@ -71,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                     intent.putStringArrayListExtra("playerList", playerList);
                     intent.putExtra("gameMoment", 0);
                     intent.putExtra("nbTurns",numberPicker.getValue());
-                    intent.putStringArrayListExtra("ruleList", rules);
+                    intent.putExtra("ruleList", rules);
                     startActivity(intent);
                 }
             }
@@ -80,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         addRuleBt.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Intent intent = new Intent(MainActivity.this, AddRuleActivity.class);
-                intent.putStringArrayListExtra("ruleList", rules);
+                intent.putExtra("ruleList", rules);
                 startActivity(intent);
             }
         });
@@ -89,7 +91,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fillRules(){
-        rules.add("Player1 règle numéro 1 Player2");
-        rules.add("Player1 immite Player2 jusqu'à nouvel ordre");
+        rules.add(new Rule("regle 1", true, Rule.ruleType.CUSTOM));
+        rules.add(new Rule("regle 2", true, Rule.ruleType.CUSTOM));
+        rules.add(new Rule("regle 3", true, Rule.ruleType.CUSTOM));
+        rules.add(new Rule("regle 4", true, Rule.ruleType.CUSTOM));
     }
 }

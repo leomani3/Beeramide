@@ -46,7 +46,7 @@ public class TakePhotoActivity extends AppCompatActivity {
     public int gameMoment;
     String beforePhotoPath;
     String afterPhotoPath;
-    public ArrayList<String> rules = new ArrayList<String>();
+    public ArrayList<Rule> rules = new ArrayList<Rule>();
     public int nbTurns;
 
     @Override
@@ -56,9 +56,11 @@ public class TakePhotoActivity extends AppCompatActivity {
 
         Log.e("feedback", getExternalFilesDir(null).toString());
 
+        rules = (ArrayList<Rule>) getIntent().getSerializableExtra("ruleList");
         playerList = getIntent().getStringArrayListExtra("playerList");
         gameMoment = getIntent().getIntExtra("gameMoment", 2);
-        rules = getIntent().getStringArrayListExtra( "ruleList");
+
+
         Button takePictureButton = findViewById(R.id.takePictureButton);
         nbTurns = getIntent().getIntExtra("nbTurns",15);
         //Take a picture
@@ -138,7 +140,7 @@ public class TakePhotoActivity extends AppCompatActivity {
 
                     Intent intent = new Intent(TakePhotoActivity.this, GameActivity.class);
                     intent.putStringArrayListExtra("playerList", playerList);
-                    intent.putStringArrayListExtra("ruleList",rules);
+                    intent.putExtra("ruleList",rules);
                     intent.putExtra("nbTurns",nbTurns);
                     startActivity(intent);
                 }
