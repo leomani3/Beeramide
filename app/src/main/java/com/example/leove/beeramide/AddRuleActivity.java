@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Switch;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
 
 public class AddRuleActivity extends AppCompatActivity {
 
-    ArrayList<String> rules = new ArrayList<>();
+    ArrayList<Rule> rules = new ArrayList<Rule>();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,13 +36,15 @@ public class AddRuleActivity extends AppCompatActivity {
         ListView lv = findViewById(R.id.rule_list);
         Button addRuleBt = findViewById(R.id.add_rule);
         Button Retour = findViewById(R.id.retour);
+        final Switch repeatableSwitch = findViewById(R.id.repeatSwitch);
         final EditText editText = findViewById(R.id.newRule);
 
         //liste des règles
-        rules = getIntent().getStringArrayListExtra("ruleList");
+        rules = (ArrayList<Rule>) getIntent().getSerializableExtra("ruleList");
 
         //Attache à l'ArrayAdapter
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.rule_list_adapter, R.id.textViewRule, rules);
+        //final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.rule_list_adapter, R.id.textViewRule, rules);
+        RuleAdapter arrayAdapter = new RuleAdapter(this, R.layout.rule_list_adapter, rules);
         lv.setAdapter(arrayAdapter);
 
         //Add rule
@@ -50,9 +53,10 @@ public class AddRuleActivity extends AppCompatActivity {
             public  void onClick(View view){
                 if(editText.getText().length()>0)
                 {
-                    rules.add(editText.getText().toString());
+                    //rules.add(editText.getText().toString());
+                    rules.add(new Rule(editText.getText().toString(), repeatableSwitch.isChecked(), Rule.ruleType.CUSTOM));
                     editText.setText("");
-                    arrayAdapter.notifyDataSetChanged();
+                    //arrayAdapter.notifyDataSetChanged();
                 }
 
             }
@@ -62,7 +66,7 @@ public class AddRuleActivity extends AppCompatActivity {
         Retour.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Intent intent = new Intent(AddRuleActivity.this, MainActivity.class);
-                intent.putStringArrayListExtra("ruleList", rules);
+                //intent.putStringArrayListExtra("ruleList", rules);
                 startActivity(intent);
             }
         });

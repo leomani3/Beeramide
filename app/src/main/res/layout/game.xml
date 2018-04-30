@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
 <LinearLayout
-    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
@@ -12,13 +8,24 @@
         android:id="@+id/textTurns"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:text="TURNS"
         android:textSize="10dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
+        android:layout_weight="30"
         android:gravity="center"
+        android:id="@+id/ruleType"
+        android:text="RULE TYPE"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="60"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:text="RULES"
         android:id="@+id/activeRule"/>
 </LinearLayout>
-</RelativeLayout>

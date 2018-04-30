@@ -8,18 +8,39 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#00729f">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="60">
+
+            <ImageButton
+                android:layout_width="200sp"
+                android:layout_height="200sp"
+                android:id="@+id/takePictureButton"
+                android:src="@drawable/cameraicon"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_gravity="bottom|center"
+                android:background="@null"/>
+
+        </FrameLayout>
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="35"
             android:text="Beeramide vous propose de prendre une photo au début et à la fin de chaque partie afin d'en garder un souvenir !" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="PRENDRE LA PHOTO !"
-            android:id="@+id/takePictureButton"/>
+            android:id="@+id/passerButton"
+            android:text="PASSER"
+            android:layout_gravity="end"/>
 
     </LinearLayout>
 

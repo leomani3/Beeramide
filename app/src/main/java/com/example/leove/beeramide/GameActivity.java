@@ -80,7 +80,9 @@ public class GameActivity extends AppCompatActivity {
         //on va chercher la règle qui correspond au random
         Rule tempRule = rules.get(rdmNumber);
         //on retire cette règle de l'ArrayList afin qu'elle ne soit plus choisie
-        rules.remove(rdmNumber);
+        if (tempRule.getRepeatable() == false){
+            rules.remove(rdmNumber);
+        }
         tempRule.setRule(remplacePlayerString(tempRule.getRule()));
 
         return tempRule.getRule();

@@ -10,6 +10,9 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.9"
         android:layout_marginTop="10dp"
-        android:id="@+id/textViewRule" />
+        android:id="@+id/textViewRule"
+        android:fontFamily="@font/anotherdayinparadise"
+        android:textSize="25sp"
+        android:textColor="#FFFFFF"/>
 
 </LinearLayout>

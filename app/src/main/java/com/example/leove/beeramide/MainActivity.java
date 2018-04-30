@@ -1,6 +1,7 @@
 package com.example.leove.beeramide;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,7 +20,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     //Liste de règles
-    //ArrayList<String> rules = new ArrayList<String>();
     ArrayList<Rule> rules = new ArrayList<Rule>();
 
     @Override
@@ -28,15 +28,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if (getIntent().hasExtra("ruleList")){
-            rules = (ArrayList<Rule>) getIntent().getExtras().get("ruleList");
+            rules = (ArrayList<Rule>) getIntent().getSerializableExtra("ruleList");
         }
 
 
         //Reference à tous les widget
         ListView lv = findViewById(R.id.player_list);
-        Button addPlayerBt = findViewById(R.id.add_player);
+        ImageButton addPlayerBt = findViewById(R.id.add_player);
         Button startGameBt = findViewById(R.id.start_game);
+
         Button addRuleBt = findViewById((R.id.go_add_rule));
+
         final NumberPicker numberPicker = findViewById(R.id.numberPicker);
         numberPicker.setMaxValue(50);
         //final TextView nbTurns = findViewById(R.id.nb_turns);
