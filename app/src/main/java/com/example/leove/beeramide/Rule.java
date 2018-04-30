@@ -86,6 +86,12 @@ public class Rule implements Parcelable{
 
     public enum ruleType {
         CUSTOM,
+        CULSEC,
+        ACTION,
+        VERITE,
+        CHOIX,
+        STANDART,
+        VIRUS,
         BOTTOMSUP
     }
 }
