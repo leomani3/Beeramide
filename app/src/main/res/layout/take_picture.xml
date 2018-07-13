@@ -3,13 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#00729f">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#00729f">
+        android:layout_marginLeft="40sp"
+        android:layout_marginRight="40sp"
+        android:layout_marginBottom="10sp"
+        android:layout_marginTop="10sp">
 
 
         <FrameLayout
@@ -18,8 +22,8 @@
             android:layout_weight="60">
 
             <ImageButton
-                android:layout_width="200sp"
-                android:layout_height="200sp"
+                android:layout_width="150sp"
+                android:layout_height="150sp"
                 android:id="@+id/takePictureButton"
                 android:src="@drawable/cameraicon"
                 android:scaleType="fitCenter"
@@ -30,18 +34,26 @@
         </FrameLayout>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="35"
-            android:text="Beeramide vous propose de prendre une photo au début et à la fin de chaque partie afin d'en garder un souvenir !" />
+            android:textSize="25sp"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:text="Gardez un souvenir de ce moment ! Prennez une photo !"
+            android:fontFamily="@font/anotherdayinparadise"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/passerButton"
-            android:text="PASSER"
+            android:fontFamily="@font/anotherdayinparadise"
+            android:textAllCaps="false"
+            android:textSize="23sp"
+            android:text="Passer"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#79de8e"
             android:layout_gravity="end"/>
 
     </LinearLayout>
-
 </android.support.constraint.ConstraintLayout>

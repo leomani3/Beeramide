@@ -73,12 +73,14 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public String pickNewRandomRule(){
+        TextView ruleType = findViewById(R.id.ruleType);
         //création d'un nombre aléatoire
         Random rdm = new Random();
         int rdmNumber = rdm.nextInt(rules.size());
 
         //on va chercher la règle qui correspond au random
         Rule tempRule = rules.get(rdmNumber);
+        ruleType.setText(tempRule.getType().toString());
         //on retire cette règle de l'ArrayList afin qu'elle ne soit plus choisie
         if (tempRule.getRepeatable() == false){
             rules.remove(rdmNumber);
@@ -102,6 +104,7 @@ public class GameActivity extends AppCompatActivity {
         }
         else{
             tv.setText(pickNewRandomRule());
+            TextView ruleType = findViewById(R.id.ruleType);
             currentRound++;
             TextView textTurns = findViewById(R.id.textTurns);
             textTurns.setText("Turn "+currentRound+" out of "+NB_ROUND_MAX+"!!");

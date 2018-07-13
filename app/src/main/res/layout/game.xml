@@ -2,12 +2,15 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#00729f">
 
     <TextView
         android:id="@+id/textTurns"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#FFF"
+        android:fontFamily="@font/anotherdayinparadise"
         android:layout_weight="10"
         android:text="TURNS"
         android:textSize="10dp" />
@@ -15,15 +18,20 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/anotherdayinparadise"
         android:layout_weight="30"
+        android:textSize="30sp"
         android:gravity="center"
         android:id="@+id/ruleType"
+        android:textColor="#FFF"
         android:text="RULE TYPE"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="60"
+        android:textColor="#FFF"
+        android:fontFamily="@font/anotherdayinparadise"
         android:textSize="20dp"
         android:textAlignment="center"
         android:text="RULES"

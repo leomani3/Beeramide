@@ -14,6 +14,7 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.NumberPicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         final NumberPicker numberPicker = findViewById(R.id.numberPicker);
         numberPicker.setMaxValue(50);
+        numberPicker.setMinValue(1);
         //final TextView nbTurns = findViewById(R.id.nb_turns);
         final EditText editText = findViewById(R.id.player_name);
 
@@ -63,6 +65,10 @@ public class MainActivity extends AppCompatActivity {
                     editText.setText("");
                     arrayAdapter.notifyDataSetChanged();
                 }
+                else{
+                    Toast toast = Toast.makeText(MainActivity.this, "Caratères non valides", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
             }
         });
 
@@ -77,6 +83,10 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("nbTurns",numberPicker.getValue());
                     intent.putExtra("ruleList", rules);
                     startActivity(intent);
+                }
+                else{
+                    Toast toast = Toast.makeText(MainActivity.this, "Il faut au moins deux joueurs", Toast.LENGTH_SHORT);
+                    toast.show();
                 }
             }
         });

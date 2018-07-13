@@ -29,6 +29,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -209,6 +210,8 @@ public class TakePhotoActivity extends AppCompatActivity {
                     Intent intent = new Intent(TakePhotoActivity.this, EndGameActivity.class);
                     startActivity(intent);
                 }
+                Toast toast = Toast.makeText(TakePhotoActivity.this, "Photo enregistrée", Toast.LENGTH_SHORT);
+                toast.show();
             }
         }
     }
